@@ -1,19 +1,14 @@
 import "./App.css";
-import { motion } from "motion/react";
+import ButtonElement from "./components/ButtonElement";
 
 function App() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-      }}
-    >
-      Corpland Academy
-    </motion.div>
+    <>
+      <ButtonElement>Get Started</ButtonElement>
+      <ButtonElement>Shop Now</ButtonElement>
+      <ButtonElement>Login</ButtonElement>
+      <ButtonElement>Sign Up</ButtonElement>
+    </>
   );
 }
 
