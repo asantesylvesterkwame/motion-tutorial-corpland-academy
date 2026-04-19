@@ -1,47 +1,24 @@
-import "./App.css";
 import { motion } from "motion/react";
+import "./App.css";
 
-const carContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.5,
-    },
-  },
-};
-
-const carItem = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-function App() {
-  const cars = [
-    "Toyota",
-    "Honda",
-    "Ford",
-    "Chevrolet",
-    "Nissan",
-    "BMW",
-    "Mercedes-Benz",
-    "Volkswagen",
-    "Audi",
-    "Hyundai",
-  ];
-
+const App = () => {
   return (
-    <>
-      <motion.ul variants={carContainer} initial="hidden" animate="visible">
-        {cars.map((car) => (
-          <motion.li variants={carItem} key={car}>
-            {car}
-          </motion.li>
-        ))}
-      </motion.ul>
-    </>
+    <div>
+      <motion.div
+        className="draggable-card"
+        drag
+        dragConstraints={{
+          left: -130,
+          right: 130,
+          top: -40,
+          bottom: 40,
+        }}
+        dragElastic={0.2}
+      >
+        Drag Me
+      </motion.div>
+    </div>
   );
-}
+};
 
 export default App;
